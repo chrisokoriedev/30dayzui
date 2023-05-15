@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:untitled2/day_one/welcome.dart';
-import 'package:untitled2/day_two/loginII.dart';
 
 import 'day_two/login.dart';
 
@@ -20,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const LoginTwo(),
+      home: const DayTwoLoginScreen(),
     );
   }
 }
