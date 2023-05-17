@@ -90,8 +90,9 @@ class WebHomePage extends StatelessWidget {
                       ),
                       Gap(30.sp),
                       Container(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 50.w, vertical: 18.h),
+                         width: 70.w,
+                          height: 55.h,
+                          alignment: Alignment.center,
                           decoration: BoxDecoration(
                               color: kDarkColor,
                               boxShadow: const [
@@ -121,7 +122,14 @@ class WebHomePage extends StatelessWidget {
                           child: buildContainer(context, Colors.black)),
                       Positioned(
                           left: 150,
-                          child: buildContainer(context, Colors.white))
+                          child: buildContainer(context, Colors.white)),
+                      Positioned(
+                          left: 100,
+                          top: -60,
+                          child: Image.asset('assets/bottle.png',width: 220.w,)),   Positioned(
+                          left: 150,
+                          top: 80,
+                          child: Image.asset('assets/bag.png',width: 220.w,))
                     ],
                   ),
                 )
