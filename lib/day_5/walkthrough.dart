@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Walkthrough extends StatefulWidget {
   const Walkthrough({Key? key}) : super(key: key);
@@ -18,8 +19,9 @@ class _WalkthroughState extends State<Walkthrough> {
         child: Column(
           children: [
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.8+10,
+              height: MediaQuery.of(context).size.height * 0.8 + 20,
               child: PageView(
+                controller: controller,
                 children: [
                   buildContainer('assets/1.png', 'Get in for \non experience',
                       const Color(0xff2c2c68)),
@@ -31,11 +33,15 @@ class _WalkthroughState extends State<Walkthrough> {
               ),
             ),
             const Gap(30),
+
             Container(
               padding: const EdgeInsets.all(25),
-              decoration:
-                  const BoxDecoration(shape: BoxShape.circle, color: Colors.orange),
-              child: const Icon(Icons.keyboard_arrow_right,size: 28,),
+              decoration: const BoxDecoration(
+                  shape: BoxShape.circle, color: Colors.orange),
+              child: const Icon(
+                Icons.keyboard_arrow_right,
+                size: 28,
+              ),
             )
           ],
         ),
@@ -76,6 +82,25 @@ class _WalkthroughState extends State<Walkthrough> {
                       fontSize: 15,
                       fontWeight: FontWeight.w400,
                       color: Colors.grey[400]),
+                ),
+                const Gap(20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SmoothPageIndicator(
+                      controller: controller, // PageController
+                      count: 2,
+                      effect: const ExpandingDotsEffect(
+                          spacing:  8.0,
+                          radius:  4.0,
+                          dotWidth:  10.0,
+                          dotHeight:  5.0,
+                          strokeWidth:  1.5,
+                          dotColor:  Colors.grey,
+                          activeDotColor:  Colors.orange
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
