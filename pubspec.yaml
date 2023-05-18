@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   gap:
   flutter_screenutil:
+  palette_generator: ^0.3.0
+  smooth_page_indicator:
 
 dev_dependencies:
   flutter_test:
