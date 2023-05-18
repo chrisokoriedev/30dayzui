@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:untitled2/day_5/home.dart';
 
 class Walkthrough extends StatefulWidget {
   const Walkthrough({Key? key}) : super(key: key);
@@ -21,6 +22,7 @@ class _WalkthroughState extends State<Walkthrough> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.8 + 20,
               child: PageView(
+                physics: const ClampingScrollPhysics(),
                 controller: controller,
                 children: [
                   buildContainer('assets/1.png', 'Get in for \non experience',
@@ -34,13 +36,16 @@ class _WalkthroughState extends State<Walkthrough> {
             ),
             const Gap(30),
 
-            Container(
-              padding: const EdgeInsets.all(25),
-              decoration: const BoxDecoration(
-                  shape: BoxShape.circle, color: Colors.orange),
-              child: const Icon(
-                Icons.keyboard_arrow_right,
-                size: 28,
+            GestureDetector(
+              onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (_)=>const SalesHomePage())),
+              child: Container(
+                padding: const EdgeInsets.all(25),
+                decoration: const BoxDecoration(
+                    shape: BoxShape.circle, color: Colors.orange),
+                child: const Icon(
+                  Icons.keyboard_arrow_right,
+                  size: 28,
+                ),
               ),
             )
           ],
